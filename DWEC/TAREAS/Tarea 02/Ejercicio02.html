@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //2. Crea un documento html que solicite al usuario cuatro números por separado, y se escriba en el documento cual de los números introducidos es mayor.
+        var number = [];
+        var num = "";
+
+        alert("Le voy a pedir cuatro numeros y le diré cual es el mas alto de los cuatro")
+        for (i = 1; i <= 4; i++) { //pedimos 4 numeros y los metemos en un array
+            num = selectNum()
+            number.push(num);
+        }
+
+        //Con la funcion Math.max calculamos el mas alto de los cuatro y lo imprimimos
+        document.write("El numero mas alto de los cuatros es " + Math.max.apply(null, number));
+
+        /*Aqui le dejo otra de las formas en la que lo había logrado hacer
+        var num = "";
+        var mayor;
+
+        for (i = 1; i <= 4; i++) {
+
+            num = selectNum();
+            mayor = (mayor > num) ? mayor : num;
+
+        }
+        document.write('El mayor de los cuatro numeros introducidos es ' + mayor);*/
+
+        //Iniciamos la function
+        function selectNum() {
+            //Pedimos por el prompt un numero
+            var num = prompt("Digame un número: ");
+            //Iniciamos un bucle while
+            while (!num || isNaN(num)) {
+                //mientras que no haya num (!num) o no sea un numero (isNaN(num)
+
+                num = prompt("Debe elegir un numero entero válido"); //vuelve a meter un valor, no podrá usar otro valor que no sea numerico
+
+                //Ya que el prompt nos devuelve un valor en texto, lo parseamos a numeral
+                var num = parseInt(num);
+                //retornamos el numero con valor numerico, y no como texto
+
+            }
+            return num;
+        }
+    </script>
+</body>
+
+</html>

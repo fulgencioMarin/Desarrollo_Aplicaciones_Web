@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h5></h5>
+    <script>
+        //3. Crea un documento html que solicite al usuario un número y se escriba en el documento el producto de los números del 1 al número introducido
+
+        let factorial = 1
+        alert("Digame un numero y le diré su factorial")
+        num = selectNum()
+
+
+        for (i = 2; i <= num; i++) {
+
+            factorial *= i
+        }
+        document.write('El producto de los número del 1 al ' + num + ' es ' + factorial)
+
+        //Iniciamos la function
+        function selectNum() {
+            //Pedimos por el prompt un numero
+            var num = prompt('Digame un numero');
+            //Iniciamos un bucle while
+            while (!num || isNaN(num) || num <= 0) { //mientras que no haya num (!num) o no sea un numero (isNaN(num)  o menor que 0 
+                num = prompt('Debe escoger un numero entero válido'); //vuelve a meter un valor, no podrá usar otro valor que no sea numerico
+            }
+
+            //Ya que el prompt nos devuelve un valor en texto, lo parseamos a numeral
+            var num = parseInt(num);
+            //retornamos el numero con valor numerico, y no como texto 
+            return num
+        }
+    </script>
+</body>
+
+</html>

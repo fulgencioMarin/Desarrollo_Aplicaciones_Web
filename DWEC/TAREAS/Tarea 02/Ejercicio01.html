@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1. Crea un documento html que solicite un nombre, la edad y escriba en el documento el mensaje: "Hola ____, tienes ____ años y tu edad es un número par.
+        let nombre = prompt("Digame su nombre")
+        var edad = selectNum()
+        var parImpar = EsPar(edad)
+
+        document.write('Hola ' + nombre + ' tienes ' + edad + ' años y tu edad es ' + parImpar)
+
+        ////Función que controla que usuario introduce un numero entero y que no sea 0 o menor o mayor de 100
+        function selectNum() {
+            //Pedimos por el prompt un numero
+            var edad = prompt('Digame su edad');
+            //Iniciamos un bucle while
+            while (!edad || isNaN(edad) || edad <= 0 || edad >= 99) { //mientras que no haya num (!num) o no sea un numero (isNaN(num), menor que 0 o mayor que 99
+                if (edad <= 0) {
+                    alert('Escoge un numero mayor que 0');
+                } else if (edad >= 99) {
+                    alert('Por favor revise la edad');
+                }
+                edad = prompt('Escoge un número válido'); //vuelve a meter un valor, no podrá usar otro valor que no sea numerico
+            }
+
+            //Ya que el prompt nos devuelve un valor en texto, lo parseamos a numeral
+            var edad = parseInt(edad);
+            //retornamos el numero con valor numerico, y no como texto 
+            return edad
+        }
+
+        //Funcion que averigua si la edad es par o impar
+        function EsPar(edad) { //creamos esta función para comprobar si la edad es par o impar
+            if (edad % 2 == 0) {
+                return "par"
+
+            } else {
+                return "impar"
+            }
+        }
+    </script>
+</body>
+
+</html>

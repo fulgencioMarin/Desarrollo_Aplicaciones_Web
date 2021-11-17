@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //4. Escribe un documento html que permita ir introduciendo una serie indeterminada de números mientras su suma no supere 50.
+        //Cuando esto ocurra, se debe mostrar el total acumulado y el contador de cuantos números se han introducido
+
+        let suma = 0
+        let numeroDeElementos = 0;
+
+        do {
+            numero = parseInt(prompt("Introduzca numeros, el programa se dentendrá cuando la suma sea 50"))
+            if (isNaN(numero)) {
+                alert("Debe introducir un numero entero válido")
+            } else {
+                suma += numero
+                numeroDeElementos++
+            }
+
+        } while (suma <= 50)
+
+        document.write("Ha introducido un total de " + numeroDeElementos + " números.");
+        document.write("<br>")
+        document.write("La suma total es " + suma + ".");
+    </script>
+</body>
+
+</html>
